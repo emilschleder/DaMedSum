@@ -1,0 +1,16 @@
+lumi:
+  username: <USERNAME>
+  password: <PASSWORD>
+  hostname: <HOSTNAME>
+  job_prefix: <JOB_OUTPUT_PREFIX>
+  workdir: <WORKING_DIRECTORY>
+
+itu: 
+  username: <USERNAME>
+  password: <PASSWORD>
+  hostname: <HOSTNAME>
+  job_prefix: <JOB_OUTPUT_PREFIX>
+  workdir: <WORKING_DIRECTORY>
+
+huggingface:
+  token: <TOKEN>

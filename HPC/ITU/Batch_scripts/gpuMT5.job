@@ -1,0 +1,38 @@
+#!/bin/bash
+
+#SBATCH -N 1                     # number of nodes
+#SBATCH --job-name=MT5      # Job name
+#SBATCH --workdir=/home/easc/    # working directory
+#SBATCH --output=job.%j.out      # Name of output file (%j expands to jobId)
+#SBATCH --cpus-per-task=8        # Schedule cpus
+#SBATCH --mem=60G                # memory per node
+#SBATCH --time=3-00:00:00          # Max Run time (hh:mm:ss)
+#SBATCH --partition=brown        # Run on either the Red or Brown queue
+#SBATCH --gres=gpu:rtx8000:1     # If you are using CUDA dependent packages gpu:a100_40gb:1
+#SBATCH --mail-type=FAIL,END     # Send an email when the job finishes or fails
+
+# showing which node it is running on
+echo "Running on $(hostname):" 
+
+# loading anaconda
+echo "Loading anaconda"
+module load Anaconda3/2021.05 
+
+# sourcing our .bashrc
+echo "Sourcing .bashrc"
+source /home/easc/.bashrc 
+
+#activating the virtual environment
+echo "Activating virtual environment"
+conda activate env_easc 
+
+# logging in to huggingfac
+echo "Logging in to huggingface"
+huggingface-cli login --token "<TOKEN>"
+
+nvidia-smi
+
+# run script
+echo "Running script"
+python mainMT5.py
+echo "Done"

@@ -1,0 +1,81 @@
+Running on desktop22:
+Loading anaconda
+Sourcing .bashrc
+stdin: is not a tty
+Activating virtual environment
+Logging in to huggingface
+Token will not been saved to git credential helper. Pass `add_to_git_credential=True` if you want to set the git credential as well.
+Token is valid (permission: write).
+Your token has been saved to /home/easc/.cache/huggingface/token
+Login successful
+Wed Nov 15 07:31:29 2023       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 525.89.02    Driver Version: 525.89.02    CUDA Version: 12.0     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  NVIDIA A100-PCI...  Off  | 00000000:25:00.0 Off |                    0 |
+| N/A   30C    P0    34W / 250W |      0MiB / 40960MiB |     42%      Default |
+|                               |                      |             Disabled |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+Running script
+[nltk_data] Downloading package punkt to /home/easc/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/pyarrow/pandas_compat.py:373: FutureWarning: is_sparse is deprecated and will be removed in a future version. Check `isinstance(dtype, pd.SparseDtype)` instead.
+  if _pandas_api.is_sparse(col):
+You are using the default legacy behaviour of the <class 'transformers.models.t5.tokenization_t5.T5Tokenizer'>. If you see this, DO NOT PANIC! This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=True`. This should only be set if you understand what it means, and thouroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565
+start
+
+          Running main.py with the following parameters: 
+          max_input_length: 1200 
+          max_target_length: 500 
+          learning_rate: 2e-05
+          gradient_accumulation_steps: 4
+          batch_size: 1 
+          num_epochs: 50 
+          saves: 3
+          model_checkpoint: Danish-summarisation/DanSumT5-large
+          data_source: Resumes_without_doubles_Final.csv
+          hub_model_id: emilstabil/DanSumT5-large-finetuned-test_91105
+          gradient_checkpointing: NO
+    
+4.32.1
+GPU memory occupied: 590 MB.
+tokenized_datasets
+Map:   0%|          | 0/800 [00:00<?, ? examples/s]Map: 100%|██████████| 800/800 [00:04<00:00, 166.03 examples/s]                                                              Map:   0%|          | 0/100 [00:00<?, ? examples/s]Map: 100%|██████████| 100/100 [00:00<00:00, 196.98 examples/s]                                                              Map:   0%|          | 0/100 [00:00<?, ? examples/s]Map: 100%|██████████| 100/100 [00:00<00:00, 188.31 examples/s]                                                              Detected kernel version 3.10.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+model_checkpoint
+cuda_memory
+Seq2SeqTrainingArguments
+data_collator
+empty cache
+start training
+  0%|          | 0/10000 [00:00<?, ?it/s]  0%|          | 1/10000 [00:06<18:17:39,  6.59s/it]  0%|          | 2/10000 [00:08<9:56:53,  3.58s/it]   0%|          | 3/10000 [00:09<7:08:23,  2.57s/it]Traceback (most recent call last):
+  File "/home/easc/mainDANSUM.py", line 206, in <module>
+    main()
+  File "/home/easc/mainDANSUM.py", line 199, in main
+    result = trainer.train()
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/transformers/trainer.py", line 1546, in train
+    return inner_training_loop(
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/transformers/trainer.py", line 1837, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/transformers/trainer.py", line 2693, in training_step
+    self.accelerator.backward(loss)
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/accelerate/accelerator.py", line 1989, in backward
+    loss.backward(**kwargs)
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/torch/_tensor.py", line 492, in backward
+    torch.autograd.backward(
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/torch/autograd/__init__.py", line 251, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 978.00 MiB. GPU 0 has a total capacty of 39.42 GiB of which 7.96 GiB is free. Including non-PyTorch memory, this process has 31.46 GiB memory in use. Of the allocated memory 29.30 GiB is allocated by PyTorch, and 1.66 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+  0%|          | 3/10000 [00:10<10:09:27,  3.66s/it]
+Done

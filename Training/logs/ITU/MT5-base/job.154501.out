@@ -1,0 +1,75 @@
+Running on desktop18:
+Loading anaconda
+Sourcing .bashrc
+stdin: is not a tty
+Activating virtual environment
+Logging in to huggingface
+Token will not been saved to git credential helper. Pass `add_to_git_credential=True` if you want to set the git credential as well.
+Token is valid (permission: write).
+Your token has been saved to /home/easc/.cache/huggingface/token
+Login successful
+Wed Nov 15 21:57:49 2023       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 525.89.02    Driver Version: 525.89.02    CUDA Version: 12.0     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  NVIDIA A30          Off  | 00000000:E1:00.0 Off |                    0 |
+| N/A   22C    P0    30W / 165W |      0MiB / 24576MiB |     21%      Default |
+|                               |                      |             Disabled |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+Running script
+[nltk_data] Downloading package punkt to /home/easc/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/pyarrow/pandas_compat.py:373: FutureWarning: is_sparse is deprecated and will be removed in a future version. Check `isinstance(dtype, pd.SparseDtype)` instead.
+  if _pandas_api.is_sparse(col):
+start
+
+          Running main.py with the following parameters: 
+          max_input_length: 1500 
+          max_target_length: 500 
+          learning_rate: 5e-05
+          gradient_accumulation_steps: 4
+          batch_size: 2 
+          num_epochs: 30 
+          saves: 3
+          model_checkpoint: emilstabil/mt5-base-finetuned-test_30483_prefix_summarize-finetuned-test_21911_prefix_summarize
+          data_source: Resumes_without_doubles_Final.csv
+          hub_model_id: emilstabil/mt5-base-finetuned-test_30483_prefix_summarize-finetuned-test_21911_prefix_summarize_prevcheckpoint_67953
+          gradient_checkpointing: NO
+    
+4.32.1
+GPU memory occupied: 483 MB.
+tokenized_datasets
+Map:   0%|          | 0/800 [00:00<?, ? examples/s]Map: 100%|██████████| 800/800 [00:01<00:00, 547.74 examples/s]                                                              Map:   0%|          | 0/100 [00:00<?, ? examples/s]Map: 100%|██████████| 100/100 [00:00<00:00, 560.98 examples/s]                                                              Map:   0%|          | 0/100 [00:00<?, ? examples/s]Map: 100%|██████████| 100/100 [00:00<00:00, 562.57 examples/s]                                                              Detected kernel version 3.10.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+model_checkpoint
+cuda_memory
+Seq2SeqTrainingArguments
+data_collator
+Traceback (most recent call last):
+  File "/home/easc/mainMT5.py", line 213, in <module>
+    main()
+  File "/home/easc/mainMT5.py", line 188, in main
+    trainer = Seq2SeqTrainer(
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/transformers/trainer_seq2seq.py", line 56, in __init__
+    super().__init__(
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/transformers/trainer.py", line 557, in __init__
+    self.init_hf_repo()
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/transformers/trainer.py", line 3435, in init_hf_repo
+    repo_url = create_repo(repo_name, token=self.args.hub_token, private=self.args.hub_private_repo, exist_ok=True)
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/huggingface_hub/utils/_validators.py", line 110, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/huggingface_hub/utils/_validators.py", line 164, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.utils._validators.HFValidationError: Repo id must use alphanumeric chars or '-', '_', '.', '--' and '..' are forbidden, '-' and '.' cannot start or end the name, max length is 96: 'emilstabil/mt5-base-finetuned-test_30483_prefix_summarize-finetuned-test_21911_prefix_summarize_prevcheckpoint_67953'.
+Done

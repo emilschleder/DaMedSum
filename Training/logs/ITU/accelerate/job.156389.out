@@ -1,0 +1,102 @@
+Running on desktop21:
+Loading anaconda
+Sourcing .bashrc
+stdin: is not a tty
+Activating virtual environment
+Logging in to huggingface
+Token will not been saved to git credential helper. Pass `add_to_git_credential=True` if you want to set the git credential as well.
+Token is valid (permission: write).
+Your token has been saved to /home/easc/.cache/huggingface/token
+Login successful
+Tue Nov 21 21:02:47 2023       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 525.89.02    Driver Version: 525.89.02    CUDA Version: 12.0     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  NVIDIA GeForce ...  Off  | 00000000:82:00.0 Off |                  N/A |
+| 10%   28C    P0    54W / 250W |      0MiB / 11264MiB |      1%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+Running script
+[nltk_data] Downloading package punkt to /home/easc/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/pyarrow/pandas_compat.py:373: FutureWarning: is_sparse is deprecated and will be removed in a future version. Check `isinstance(dtype, pd.SparseDtype)` instead.
+  if _pandas_api.is_sparse(col):
+You are using the default legacy behaviour of the <class 'transformers.models.t5.tokenization_t5.T5Tokenizer'>. If you see this, DO NOT PANIC! This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=True`. This should only be set if you understand what it means, and thouroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565
+start
+
+          Running main.py with the following parameters: 
+          max_input_length: 1500 
+          max_target_length: 1024 
+          learning_rate: 5e-05
+          gradient_accumulation_steps: 4
+          batch_size: 2 
+          num_epochs: 2 
+          saves: 10
+          model_checkpoint: danish-summarisation/DanSumT5-base
+          data_source: 2326_Summaries.csv
+          hub_model_id: emilstabil/DanSumT5-baseV_97392
+          gradient_checkpointing: NO
+    
+4.32.1
+GPU memory occupied: 91 MB.
+tokenized_datasets
+Map:   0%|          | 0/1860 [00:00<?, ? examples/s]Map:  54%|█████▍    | 1000/1860 [00:05<00:05, 170.88 examples/s]Map: 100%|██████████| 1860/1860 [00:10<00:00, 168.92 examples/s]                                                                Map:   0%|          | 0/233 [00:00<?, ? examples/s]Map: 100%|██████████| 233/233 [00:01<00:00, 172.50 examples/s]                                                              Map:   0%|          | 0/233 [00:00<?, ? examples/s]Map: 100%|██████████| 233/233 [00:01<00:00, 172.41 examples/s]                                                              Detected kernel version 3.10.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+DatasetDict({
+    train: Dataset({
+        features: ['title', 'text_specialchars', 'Summary', 'input_ids', 'attention_mask', 'labels'],
+        num_rows: 1860
+    })
+    valid: Dataset({
+        features: ['title', 'text_specialchars', 'Summary', 'input_ids', 'attention_mask', 'labels'],
+        num_rows: 233
+    })
+    test: Dataset({
+        features: ['title', 'text_specialchars', 'Summary', 'input_ids', 'attention_mask', 'labels'],
+        num_rows: 233
+    })
+})
+  0%|          | 0/9300 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/transformers/tokenization_utils_base.py", line 736, in convert_to_tensors
+    tensor = as_tensor(value)
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/transformers/tokenization_utils_base.py", line 708, in as_tensor
+    return torch.tensor(value)
+ValueError: too many dimensions 'str'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/easc/mainDANSUM_acc.py", line 343, in <module>
+    main()
+  File "/home/easc/mainDANSUM_acc.py", line 189, in main
+    for step, batch in enumerate(train_dataloader):
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/accelerate/data_loader.py", line 451, in __iter__
+    current_batch = next(dataloader_iter)
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 630, in __next__
+    data = self._next_data()
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 674, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 54, in fetch
+    return self.collate_fn(data)
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/transformers/data/data_collator.py", line 586, in __call__
+    features = self.tokenizer.pad(
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/transformers/tokenization_utils_base.py", line 3099, in pad
+    return BatchEncoding(batch_outputs, tensor_type=return_tensors)
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/transformers/tokenization_utils_base.py", line 211, in __init__
+    self.convert_to_tensors(tensor_type=tensor_type, prepend_batch_axis=prepend_batch_axis)
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/transformers/tokenization_utils_base.py", line 752, in convert_to_tensors
+    raise ValueError(
+ValueError: Unable to create tensor, you should probably activate truncation and/or padding with 'padding=True' 'truncation=True' to have batched tensors with the same length. Perhaps your features (`title` in this case) have excessive nesting (inputs type `list` where type `int` is expected).
+  0%|          | 0/9300 [00:01<?, ?it/s]
+Done

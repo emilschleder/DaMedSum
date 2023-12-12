@@ -1,0 +1,16 @@
+# Requirements for running the code on HPC cluster
+datasets 
+evaluate 
+ipython
+transformers 
+transformers[torch] 
+huggingface_hub
+nltk 
+sentencepiece 
+torch 
+rouge-score 
+google
+protobuf
+git-lfs
+pyarrow==11.0.0
+pynvml

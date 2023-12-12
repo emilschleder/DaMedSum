@@ -1,0 +1,86 @@
+Running on desktop22:
+Loading anaconda
+Sourcing .bashrc
+stdin: is not a tty
+Activating virtual environment
+Logging in to huggingface
+Token will not been saved to git credential helper. Pass `add_to_git_credential=True` if you want to set the git credential as well.
+Token is valid (permission: write).
+Your token has been saved to /home/easc/.cache/huggingface/token
+Login successful
+Tue Nov 21 21:46:05 2023       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 525.89.02    Driver Version: 525.89.02    CUDA Version: 12.0     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  NVIDIA A100-PCI...  Off  | 00000000:25:00.0 Off |                    0 |
+| N/A   30C    P0    36W / 250W |      0MiB / 40960MiB |     41%      Default |
+|                               |                      |             Disabled |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+Running script
+[nltk_data] Downloading package punkt to /home/easc/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/pyarrow/pandas_compat.py:373: FutureWarning: is_sparse is deprecated and will be removed in a future version. Check `isinstance(dtype, pd.SparseDtype)` instead.
+  if _pandas_api.is_sparse(col):
+You are using the default legacy behaviour of the <class 'transformers.models.t5.tokenization_t5.T5Tokenizer'>. If you see this, DO NOT PANIC! This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=True`. This should only be set if you understand what it means, and thouroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565
+start
+
+          Running main.py with the following parameters: 
+          max_input_length: 1500 
+          max_target_length: 1024 
+          learning_rate: 5e-05
+          gradient_accumulation_steps: 4
+          batch_size: 2 
+          num_epochs: 2 
+          saves: 10
+          model_checkpoint: danish-summarisation/DanSumT5-base
+          data_source: 2326_Summaries.csv
+          hub_model_id: emilstabil/DanSumT5-baseV_71351
+          gradient_checkpointing: NO
+    
+4.32.1
+GPU memory occupied: 590 MB.
+tokenized_datasets
+Map:   0%|          | 0/1860 [00:00<?, ? examples/s]Map:  54%|█████▍    | 1000/1860 [00:05<00:04, 193.28 examples/s]Map: 100%|██████████| 1860/1860 [00:09<00:00, 191.69 examples/s]                                                                Map:   0%|          | 0/233 [00:00<?, ? examples/s]Map: 100%|██████████| 233/233 [00:01<00:00, 192.47 examples/s]                                                              Map:   0%|          | 0/233 [00:00<?, ? examples/s]Map: 100%|██████████| 233/233 [00:01<00:00, 193.40 examples/s]                                                              Detected kernel version 3.10.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+model
+train_dataloader
+eval_dataloader
+optimizer
+accelerator
+prepare
+get_scheduler
+lr_scheduler
+  0%|          | 0/1860 [00:00<?, ?it/s]  0%|          | 1/1860 [00:06<3:09:10,  6.11s/it]  0%|          | 2/1860 [00:06<1:23:56,  2.71s/it]  0%|          | 3/1860 [00:06<49:00,  1.58s/it]    0%|          | 4/1860 [00:07<33:49,  1.09s/it]  0%|          | 5/1860 [00:07<24:55,  1.24it/s]  0%|          | 6/1860 [00:07<20:16,  1.52it/s]  0%|          | 7/1860 [00:08<17:24,  1.77it/s]  0%|          | 8/1860 [00:08<15:46,  1.96it/s]  0%|          | 9/1860 [00:08<14:13,  2.17it/s]  1%|          | 10/1860 [00:09<13:15,  2.33it/s]  1%|          | 11/1860 [00:09<11:55,  2.58it/s]  1%|          | 12/1860 [00:09<11:43,  2.63it/s]  1%|          | 13/1860 [00:10<11:41,  2.63it/s]  1%|          | 14/1860 [00:10<11:37,  2.65it/s]  1%|          | 15/1860 [00:10<10:38,  2.89it/s]  1%|          | 16/1860 [00:11<11:06,  2.77it/s]  1%|          | 17/1860 [00:11<11:34,  2.65it/s]  1%|          | 18/1860 [00:12<13:27,  2.28it/s]  1%|          | 19/1860 [00:12<13:07,  2.34it/s]  1%|          | 20/1860 [00:13<13:22,  2.29it/s]  1%|          | 21/1860 [00:13<12:47,  2.40it/s]  1%|          | 22/1860 [00:13<12:24,  2.47it/s]  1%|          | 23/1860 [00:14<12:03,  2.54it/s]  1%|▏         | 24/1860 [00:14<10:29,  2.92it/s]  1%|▏         | 25/1860 [00:14<11:04,  2.76it/s]  1%|▏         | 26/1860 [00:15<11:17,  2.71it/s]  1%|▏         | 27/1860 [00:15<11:11,  2.73it/s]  2%|▏         | 28/1860 [00:15<11:11,  2.73it/s]  2%|▏         | 29/1860 [00:16<11:16,  2.71it/s]  2%|▏         | 30/1860 [00:16<11:33,  2.64it/s]  2%|▏         | 31/1860 [00:17<11:21,  2.68it/s]  2%|▏         | 32/1860 [00:17<11:15,  2.71it/s]  2%|▏         | 33/1860 [00:17<11:14,  2.71it/s]  2%|▏         | 34/1860 [00:18<10:26,  2.91it/s]  2%|▏         | 35/1860 [00:18<10:34,  2.88it/s]  2%|▏         | 36/1860 [00:18<10:43,  2.84it/s]  2%|▏         | 37/1860 [00:19<10:42,  2.84it/s]  2%|▏         | 38/1860 [00:19<09:35,  3.17it/s]  2%|▏         | 39/1860 [00:19<09:18,  3.26it/s]  2%|▏         | 40/1860 [00:20<09:52,  3.07it/s]  2%|▏         | 41/1860 [00:20<10:37,  2.85it/s]  2%|▏         | 42/1860 [00:20<10:53,  2.78it/s]  2%|▏         | 43/1860 [00:21<11:08,  2.72it/s]  2%|▏         | 44/1860 [00:21<11:33,  2.62it/s]  2%|▏         | 45/1860 [00:21<10:08,  2.98it/s]  2%|▏         | 46/1860 [00:22<10:16,  2.94it/s]  3%|▎         | 47/1860 [00:22<10:45,  2.81it/s]  3%|▎         | 48/1860 [00:23<10:54,  2.77it/s]  3%|▎         | 49/1860 [00:23<11:05,  2.72it/s]  3%|▎         | 50/1860 [00:23<11:03,  2.73it/s]  3%|▎         | 51/1860 [00:24<11:05,  2.72it/s]  3%|▎         | 52/1860 [00:24<11:14,  2.68it/s]  3%|▎         | 53/1860 [00:24<10:53,  2.76it/s]  3%|▎         | 54/1860 [00:25<10:51,  2.77it/s]  3%|▎         | 55/1860 [00:25<10:34,  2.85it/s]  3%|▎         | 56/1860 [00:25<10:45,  2.80it/s]  3%|▎         | 57/1860 [00:26<11:15,  2.67it/s]  3%|▎         | 58/1860 [00:26<11:07,  2.70it/s]  3%|▎         | 59/1860 [00:27<11:29,  2.61it/s]  3%|▎         | 60/1860 [00:27<11:15,  2.67it/s]  3%|▎         | 61/1860 [00:27<11:11,  2.68it/s]  3%|▎         | 62/1860 [00:28<10:48,  2.77it/s]  3%|▎         | 63/1860 [00:28<10:59,  2.73it/s]  3%|▎         | 64/1860 [00:28<11:43,  2.55it/s]  3%|▎         | 65/1860 [00:29<11:42,  2.56it/s]  4%|▎         | 66/1860 [00:29<11:37,  2.57it/s]  4%|▎         | 67/1860 [00:30<11:29,  2.60it/s]  4%|▎         | 68/1860 [00:30<11:20,  2.63it/s]  4%|▎         | 69/1860 [00:30<11:05,  2.69it/s]  4%|▍         | 70/1860 [00:31<10:12,  2.92it/s]  4%|▍         | 71/1860 [00:31<10:41,  2.79it/s]  4%|▍         | 72/1860 [00:31<09:12,  3.24it/s]  4%|▍         | 73/1860 [00:32<09:47,  3.04it/s]  4%|▍         | 74/1860 [00:32<10:11,  2.92it/s]  4%|▍         | 75/1860 [00:32<10:52,  2.74it/s]  4%|▍         | 76/1860 [00:33<09:26,  3.15it/s]  4%|▍         | 77/1860 [00:33<09:40,  3.07it/s]  4%|▍         | 78/1860 [00:34<12:08,  2.45it/s]  4%|▍         | 79/1860 [00:34<11:51,  2.50it/s]  4%|▍         | 80/1860 [00:34<11:35,  2.56it/s]  4%|▍         | 81/1860 [00:35<11:07,  2.66it/s]  4%|▍         | 82/1860 [00:35<11:05,  2.67it/s]  4%|▍         | 83/1860 [00:35<11:15,  2.63it/s]  5%|▍         | 84/1860 [00:36<11:03,  2.68it/s]  5%|▍         | 85/1860 [00:36<11:03,  2.67it/s]  5%|▍         | 86/1860 [00:36<10:20,  2.86it/s]  5%|▍         | 87/1860 [00:37<10:32,  2.80it/s]  5%|▍         | 88/1860 [00:37<11:21,  2.60it/s]  5%|▍         | 89/1860 [00:37<10:11,  2.90it/s]  5%|▍         | 90/1860 [00:38<10:34,  2.79it/s]  5%|▍         | 91/1860 [00:38<11:41,  2.52it/s]  5%|▍         | 92/1860 [00:39<11:27,  2.57it/s]  5%|▌         | 93/1860 [00:39<11:24,  2.58it/s]start training
+Traceback (most recent call last):
+  File "/home/easc/mainDANSUM_acc.py", line 349, in <module>
+    main()
+  File "/home/easc/mainDANSUM_acc.py", line 196, in main
+    outputs = model(**batch)
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/transformers/models/mt5/modeling_mt5.py", line 1806, in forward
+    loss = loss_fct(lm_logits.view(-1, lm_logits.size(-1)), labels.view(-1))
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/torch/nn/modules/loss.py", line 1179, in forward
+    return F.cross_entropy(input, target, weight=self.weight,
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/torch/nn/functional.py", line 3053, in cross_entropy
+    return torch._C._nn.cross_entropy_loss(input, target, weight, _Reduction.get_enum(reduction), ignore_index, label_smoothing)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.91 GiB. GPU 0 has a total capacty of 39.42 GiB of which 7.39 GiB is free. Including non-PyTorch memory, this process has 32.04 GiB memory in use. Of the allocated memory 29.47 GiB is allocated by PyTorch, and 1.28 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+  5%|▌         | 93/1860 [00:40<12:41,  2.32it/s]
+Done

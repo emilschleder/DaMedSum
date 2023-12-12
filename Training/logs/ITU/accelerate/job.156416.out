@@ -1,0 +1,175 @@
+Running on desktop22:
+Loading anaconda
+Sourcing .bashrc
+stdin: is not a tty
+Activating virtual environment
+Logging in to huggingface
+Token will not been saved to git credential helper. Pass `add_to_git_credential=True` if you want to set the git credential as well.
+Token is valid (permission: write).
+Your token has been saved to /home/easc/.cache/huggingface/token
+Login successful
+Wed Nov 22 01:59:42 2023       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 525.89.02    Driver Version: 525.89.02    CUDA Version: 12.0     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  NVIDIA A100-PCI...  Off  | 00000000:01:00.0 Off |                    0 |
+| N/A   31C    P0    36W / 250W |      0MiB / 40960MiB |      0%      Default |
+|                               |                      |             Disabled |
++-------------------------------+----------------------+----------------------+
+|   1  NVIDIA A100-PCI...  Off  | 00000000:E1:00.0 Off |                    0 |
+| N/A   28C    P0    35W / 250W |      0MiB / 40960MiB |      4%      Default |
+|                               |                      |             Disabled |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+Running script
+/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/torch/distributed/launch.py:181: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects `--local-rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  warnings.warn(
+[2023-11-22 02:00:15,003] torch.distributed.run: [WARNING] 
+[2023-11-22 02:00:15,003] torch.distributed.run: [WARNING] *****************************************
+[2023-11-22 02:00:15,003] torch.distributed.run: [WARNING] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+[2023-11-22 02:00:15,003] torch.distributed.run: [WARNING] *****************************************
+start
+start
+[nltk_data] Downloading package punkt to /home/easc/nltk_data...
+[nltk_data] Downloading package punkt to /home/easc/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+[nltk_data]   Package punkt is already up-to-date!
+dev count:  dev count: 2 
+2
+
+          Running main.py with the following parameters: 
+          max_input_length: 1500 
+          max_target_length: 1024 
+          learning_rate: 5e-05
+          gradient_accumulation_steps: 4
+          batch_size: 2 
+          num_epochs: 2 
+          saves: 10
+          model_checkpoint: danish-summarisation/DanSumT5-base
+          data_source: 2326_Summaries.csv
+          hub_model_id: emilstabil/DanSumT5-baseV_13641
+          gradient_checkpointing: NO
+    
+          Running main.py with the following parameters: 
+          max_input_length: 1500 
+          max_target_length: 1024 
+          learning_rate: 5e-05
+          gradient_accumulation_steps: 4
+          batch_size: 2 
+          num_epochs: 2 
+          saves: 10
+          model_checkpoint: danish-summarisation/DanSumT5-base
+          data_source: 2326_Summaries.csv
+          hub_model_id: emilstabil/DanSumT5-baseV_51314
+          gradient_checkpointing: NO
+    
+
+4.32.1
+4.32.1
+GPU memory occupied: 590 MB.
+GPU memory occupied: 590 MB.
+/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/pyarrow/pandas_compat.py:373: FutureWarning: is_sparse is deprecated and will be removed in a future version. Check `isinstance(dtype, pd.SparseDtype)` instead.
+  if _pandas_api.is_sparse(col):
+/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/pyarrow/pandas_compat.py:373: FutureWarning: is_sparse is deprecated and will be removed in a future version. Check `isinstance(dtype, pd.SparseDtype)` instead.
+  if _pandas_api.is_sparse(col):
+You are using the default legacy behaviour of the <class 'transformers.models.t5.tokenization_t5.T5Tokenizer'>. If you see this, DO NOT PANIC! This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=True`. This should only be set if you understand what it means, and thouroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565
+You are using the default legacy behaviour of the <class 'transformers.models.t5.tokenization_t5.T5Tokenizer'>. If you see this, DO NOT PANIC! This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=True`. This should only be set if you understand what it means, and thouroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565
+tokenized_datasets
+tokenized_datasets
+Map:   0%|          | 0/1860 [00:00<?, ? examples/s]Map:   0%|          | 0/1860 [00:00<?, ? examples/s]Map:  54%|█████▍    | 1000/1860 [00:05<00:04, 189.22 examples/s]Map:  54%|█████▍    | 1000/1860 [00:05<00:04, 187.67 examples/s]Map: 100%|██████████| 1860/1860 [00:09<00:00, 187.11 examples/s]                                                                Map:   0%|          | 0/233 [00:00<?, ? examples/s]Map: 100%|██████████| 1860/1860 [00:10<00:00, 184.78 examples/s]                                                                Map:   0%|          | 0/233 [00:00<?, ? examples/s]Map: 100%|██████████| 233/233 [00:01<00:00, 189.29 examples/s]                                                              Map:   0%|          | 0/233 [00:00<?, ? examples/s]Map: 100%|██████████| 233/233 [00:01<00:00, 187.69 examples/s]                                                              Map:   0%|          | 0/233 [00:00<?, ? examples/s]Map: 100%|██████████| 233/233 [00:01<00:00, 190.77 examples/s]                                                              model_checkpoint
+Map: 100%|██████████| 233/233 [00:01<00:00, 188.72 examples/s]                                                              model_checkpoint
+cuda_memory
+cuda_memory
+Seq2SeqTrainingArguments
+data_collator
+Detected kernel version 3.10.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+Seq2SeqTrainingArguments
+data_collator
+empty cache
+start training
+empty cache
+start training
+[E ProcessGroupNCCL.cpp:474] [Rank 0] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=1, OpType=ALLGATHER, NumelIn=1, NumelOut=2, Timeout(ms)=1800000) ran for 1800304 milliseconds before timing out.
+[E ProcessGroupNCCL.cpp:488] Some NCCL operations have failed or timed out. Due to the asynchronous nature of CUDA kernels, subsequent GPU operations might run on corrupted/incomplete data.
+[E ProcessGroupNCCL.cpp:494] To avoid data inconsistency, we are taking the entire process down.
+[E ProcessGroupNCCL.cpp:915] [Rank 0] NCCL watchdog thread terminated with exception: [Rank 0] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=1, OpType=ALLGATHER, NumelIn=1, NumelOut=2, Timeout(ms)=1800000) ran for 1800304 milliseconds before timing out.
+[E ProcessGroupNCCL.cpp:474] [Rank 1] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=1, OpType=ALLGATHER, NumelIn=1, NumelOut=2, Timeout(ms)=1800000) ran for 1800465 milliseconds before timing out.
+Traceback (most recent call last):
+  File "/home/easc/mainDANSUM.py", line 208, in <module>
+    main()
+  File "/home/easc/mainDANSUM.py", line 201, in main
+    result = trainer.train()
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/transformers/trainer.py", line 1546, in train
+    return inner_training_loop(
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/transformers/trainer.py", line 1684, in _inner_training_loop
+    model, self.optimizer = self.accelerator.prepare(self.model, self.optimizer)
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/accelerate/accelerator.py", line 1288, in prepare
+    result = tuple(
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/accelerate/accelerator.py", line 1289, in <genexpr>
+    self._prepare_one(obj, first_pass=True, device_placement=d) for obj, d in zip(args, device_placement)
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/accelerate/accelerator.py", line 1094, in _prepare_one
+    return self.prepare_model(obj, device_placement=device_placement)
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/accelerate/accelerator.py", line 1433, in prepare_model
+    model = torch.nn.parallel.DistributedDataParallel(
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/torch/nn/parallel/distributed.py", line 795, in __init__
+    _verify_param_shape_across_processes(self.process_group, parameters)
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/torch/distributed/utils.py", line 265, in _verify_param_shape_across_processes
+    return dist._verify_params_across_processes(process_group, tensors, logger)
+RuntimeError: DDP expects same model across all ranks, but Rank 1 has 282 params, while rank 0 has inconsistent 0 params.
+[E ProcessGroupNCCL.cpp:488] Some NCCL operations have failed or timed out. Due to the asynchronous nature of CUDA kernels, subsequent GPU operations might run on corrupted/incomplete data.
+[E ProcessGroupNCCL.cpp:494] To avoid data inconsistency, we are taking the entire process down.
+[E ProcessGroupNCCL.cpp:915] [Rank 1] NCCL watchdog thread terminated with exception: [Rank 1] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=1, OpType=ALLGATHER, NumelIn=1, NumelOut=2, Timeout(ms)=1800000) ran for 1800465 milliseconds before timing out.
+[2023-11-22 02:31:46,934] torch.distributed.elastic.multiprocessing.api: [WARNING] Sending process 19043 closing signal SIGTERM
+[2023-11-22 02:31:48,700] torch.distributed.elastic.multiprocessing.api: [ERROR] failed (exitcode: -6) local_rank: 0 (pid: 19042) of binary: /home/easc/.conda/envs/env_easc/bin/python
+Traceback (most recent call last):
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/torch/distributed/launch.py", line 196, in <module>
+    main()
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/torch/distributed/launch.py", line 192, in main
+    launch(args)
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/torch/distributed/launch.py", line 177, in launch
+    run(args)
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/torch/distributed/run.py", line 797, in run
+    elastic_launch(
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 134, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+======================================================
+mainDANSUM.py FAILED
+------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2023-11-22_02:31:46
+  host      : localhost.localdomain
+  rank      : 0 (local_rank: 0)
+  exitcode  : -6 (pid: 19042)
+  error_file: <N/A>
+  traceback : Signal 6 (SIGABRT) received by PID 19042
+======================================================
+Done

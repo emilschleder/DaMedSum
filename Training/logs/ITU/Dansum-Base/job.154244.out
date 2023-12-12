@@ -1,0 +1,90 @@
+Running on desktop17:
+Loading anaconda
+Sourcing .bashrc
+stdin: is not a tty
+Activating virtual environment
+Logging in to huggingface
+Token will not been saved to git credential helper. Pass `add_to_git_credential=True` if you want to set the git credential as well.
+Token is valid (permission: write).
+Your token has been saved to /home/easc/.cache/huggingface/token
+Login successful
+Tue Nov 14 09:49:47 2023       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 525.89.02    Driver Version: 525.89.02    CUDA Version: 12.0     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Quadro RTX 8000     Off  | 00000000:3B:00.0 Off |                  Off |
+| 33%   37C    P0    46W / 260W |      0MiB / 49152MiB |      4%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+Running script
+[nltk_data] Downloading package punkt to /home/easc/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/pyarrow/pandas_compat.py:373: FutureWarning: is_sparse is deprecated and will be removed in a future version. Check `isinstance(dtype, pd.SparseDtype)` instead.
+  if _pandas_api.is_sparse(col):
+You are using the default legacy behaviour of the <class 'transformers.models.t5.tokenization_t5.T5Tokenizer'>. If you see this, DO NOT PANIC! This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=True`. This should only be set if you understand what it means, and thouroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565
+start
+
+          Running main.py with the following parameters: 
+          max_input_length: 5000 
+          max_target_length: 500 
+          learning_rate: 2e-05
+          gradient_accumulation_steps: 0
+          batch_size: 5 
+          num_epochs: 5 
+          saves: 3
+          model_checkpoint: Danish-summarisation/DanSumT5-base
+          data_source: Resumes_without_doubles_Final.csv
+          hub_model_id: emilstabil/DanSumT5-base-finetuned-test_5__5_1411
+          gradient_checkpointing: True
+    
+4.32.1
+GPU memory occupied: 558 MB.
+tokenized_datasets
+Map:   0%|          | 0/800 [00:00<?, ? examples/s]Map: 100%|██████████| 800/800 [00:04<00:00, 182.82 examples/s]                                                              Map:   0%|          | 0/100 [00:00<?, ? examples/s]Map: 100%|██████████| 100/100 [00:00<00:00, 225.18 examples/s]                                                              Map:   0%|          | 0/100 [00:00<?, ? examples/s]Map: 100%|██████████| 100/100 [00:00<00:00, 219.62 examples/s]                                                              Detected kernel version 3.10.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+model_checkpoint
+cuda_memory
+Seq2SeqTrainingArguments
+data_collator
+empty cache
+start training
+  0%|          | 0/800 [00:00<?, ?it/s]/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/torch/utils/checkpoint.py:429: UserWarning: torch.utils.checkpoint: please pass in use_reentrant=True or use_reentrant=False explicitly. The default value of use_reentrant will be updated to be False in the future. To maintain current behavior, pass use_reentrant=True. It is recommended that you use use_reentrant=False. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`...
+Traceback (most recent call last):
+  File "/home/easc/main.py", line 205, in <module>
+    main()
+  File "/home/easc/main.py", line 198, in main
+    result = trainer.train()
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/transformers/trainer.py", line 1546, in train
+    return inner_training_loop(
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/transformers/trainer.py", line 1837, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/transformers/trainer.py", line 2693, in training_step
+    self.accelerator.backward(loss)
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/accelerate/accelerator.py", line 1987, in backward
+    self.scaler.scale(loss).backward(**kwargs)
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/torch/_tensor.py", line 492, in backward
+    torch.autograd.backward(
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/torch/autograd/__init__.py", line 251, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/torch/autograd/function.py", line 288, in apply
+    return user_fn(self, *args)
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/torch/utils/checkpoint.py", line 288, in backward
+    torch.autograd.backward(outputs_with_grad, args_with_grad)
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/torch/autograd/__init__.py", line 251, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 5.59 GiB. GPU 0 has a total capacty of 47.45 GiB of which 12.96 GiB is free. Including non-PyTorch memory, this process has 34.49 GiB memory in use. Of the allocated memory 33.49 GiB is allocated by PyTorch, and 814.71 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+  0%|          | 0/800 [00:09<?, ?it/s]
+Done

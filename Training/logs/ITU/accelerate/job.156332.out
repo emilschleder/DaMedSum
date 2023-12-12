@@ -1,0 +1,62 @@
+Running on desktop21:
+Loading anaconda
+Sourcing .bashrc
+stdin: is not a tty
+Activating virtual environment
+Logging in to huggingface
+Token will not been saved to git credential helper. Pass `add_to_git_credential=True` if you want to set the git credential as well.
+Token is valid (permission: write).
+Your token has been saved to /home/easc/.cache/huggingface/token
+Login successful
+Tue Nov 21 14:17:26 2023       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 525.89.02    Driver Version: 525.89.02    CUDA Version: 12.0     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  NVIDIA GeForce ...  Off  | 00000000:82:00.0 Off |                  N/A |
+| 10%   28C    P0    54W / 250W |      0MiB / 11264MiB |      1%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+Running script
+[nltk_data] Downloading package punkt to /home/easc/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/pyarrow/pandas_compat.py:373: FutureWarning: is_sparse is deprecated and will be removed in a future version. Check `isinstance(dtype, pd.SparseDtype)` instead.
+  if _pandas_api.is_sparse(col):
+start
+
+          Running main.py with the following parameters: 
+          max_input_length: 1500 
+          max_target_length: 1024 
+          learning_rate: 5e-05
+          gradient_accumulation_steps: 4
+          batch_size: 2 
+          num_epochs: 2 
+          saves: 10
+          model_checkpoint: emilstabil/DanSumT5-baseV_38821V_41166
+          data_source: 2326_Summaries.csv
+          hub_model_id: emilstabil/DanSumT5-baseV_38821V_41166V_9706
+          gradient_checkpointing: NO
+    
+4.32.1
+GPU memory occupied: 91 MB.
+tokenized_datasets
+Map:   0%|          | 0/1860 [00:00<?, ? examples/s]Map:  54%|█████▍    | 1000/1860 [00:06<00:05, 165.09 examples/s]Map: 100%|██████████| 1860/1860 [00:11<00:00, 160.14 examples/s]                                                                Map:   0%|          | 0/233 [00:00<?, ? examples/s]Map: 100%|██████████| 233/233 [00:01<00:00, 169.02 examples/s]                                                              Map:   0%|          | 0/233 [00:00<?, ? examples/s]Map: 100%|██████████| 233/233 [00:01<00:00, 157.02 examples/s]                                                              Traceback (most recent call last):
+  File "/home/easc/mainDANSUM_acc.py", line 341, in <module>
+    main()
+  File "/home/easc/mainDANSUM_acc.py", line 129, in main
+    tokenized_datasets["validation"], collate_fn=data_collator, batch_size=batch_size
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/datasets/dataset_dict.py", line 57, in __getitem__
+    return super().__getitem__(k)
+KeyError: 'validation'
+Done

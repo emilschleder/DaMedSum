@@ -1,0 +1,98 @@
+Running on desktop17:
+Loading anaconda
+Sourcing .bashrc
+stdin: is not a tty
+Activating virtual environment
+Logging in to huggingface
+Token will not been saved to git credential helper. Pass `add_to_git_credential=True` if you want to set the git credential as well.
+Token is valid (permission: write).
+Your token has been saved to /home/easc/.cache/huggingface/token
+Login successful
+Tue Nov 14 23:21:46 2023       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 525.89.02    Driver Version: 525.89.02    CUDA Version: 12.0     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Quadro RTX 8000     Off  | 00000000:AF:00.0 Off |                  Off |
+| 33%   35C    P0    23W / 260W |      0MiB / 49152MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+Running script
+[nltk_data] Downloading package punkt to /home/easc/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/pyarrow/pandas_compat.py:373: FutureWarning: is_sparse is deprecated and will be removed in a future version. Check `isinstance(dtype, pd.SparseDtype)` instead.
+  if _pandas_api.is_sparse(col):
+start
+
+          Running main.py with the following parameters: 
+          max_input_length: 1200 
+          max_target_length: 500 
+          learning_rate: 2e-05
+          gradient_accumulation_steps: 4
+          batch_size: 1 
+          num_epochs: 50 
+          saves: 3
+          model_checkpoint: emilstabil/DanSumT5-large
+          data_source: Resumes_without_doubles_Final.csv
+          hub_model_id: emilstabil/DanSumT5-large-finetuned-test_22434
+          gradient_checkpointing: NO
+    
+4.32.1
+GPU memory occupied: 558 MB.
+Traceback (most recent call last):
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/huggingface_hub/utils/_errors.py", line 261, in hf_raise_for_status
+    response.raise_for_status()
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://huggingface.co/emilstabil/DanSumT5-large/resolve/main/tokenizer_config.json
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/transformers/utils/hub.py", line 428, in cached_file
+    resolved_file = hf_hub_download(
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/huggingface_hub/utils/_validators.py", line 118, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 1346, in hf_hub_download
+    raise head_call_error
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 1232, in hf_hub_download
+    metadata = get_hf_file_metadata(
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/huggingface_hub/utils/_validators.py", line 118, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 1608, in get_hf_file_metadata
+    hf_raise_for_status(r)
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/huggingface_hub/utils/_errors.py", line 293, in hf_raise_for_status
+    raise RepositoryNotFoundError(message, response) from e
+huggingface_hub.utils._errors.RepositoryNotFoundError: 404 Client Error. (Request ID: Root=1-6553f30f-778124f60f4c11a066e3ecb2;32db6d38-c902-4b88-aafc-d44e6f9c55ac)
+
+Repository Not Found for url: https://huggingface.co/emilstabil/DanSumT5-large/resolve/main/tokenizer_config.json.
+Please make sure you specified the correct `repo_id` and `repo_type`.
+If you are trying to access a private or gated repo, make sure you are authenticated.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/easc/mainDANSUM.py", line 206, in <module>
+    main()
+  File "/home/easc/mainDANSUM.py", line 83, in main
+    tokenizer = AutoTokenizer.from_pretrained(
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/transformers/models/auto/tokenization_auto.py", line 677, in from_pretrained
+    tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/transformers/models/auto/tokenization_auto.py", line 510, in get_tokenizer_config
+    resolved_config_file = cached_file(
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/transformers/utils/hub.py", line 449, in cached_file
+    raise EnvironmentError(
+OSError: emilstabil/DanSumT5-large is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `huggingface-cli login` or by passing `token=<your_token>`
+Done

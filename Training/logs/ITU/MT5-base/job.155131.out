@@ -1,0 +1,81 @@
+Running on desktop17:
+Loading anaconda
+Sourcing .bashrc
+stdin: is not a tty
+Activating virtual environment
+Logging in to huggingface
+Token will not been saved to git credential helper. Pass `add_to_git_credential=True` if you want to set the git credential as well.
+Token is valid (permission: write).
+Your token has been saved to /home/easc/.cache/huggingface/token
+Login successful
+Mon Nov 20 09:52:01 2023       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 525.89.02    Driver Version: 525.89.02    CUDA Version: 12.0     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Quadro RTX 8000     Off  | 00000000:AF:00.0 Off |                  Off |
+| 33%   38C    P0    35W / 260W |      0MiB / 49152MiB |      4%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+Running script
+[nltk_data] Downloading package punkt to /home/easc/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/pyarrow/pandas_compat.py:373: FutureWarning: is_sparse is deprecated and will be removed in a future version. Check `isinstance(dtype, pd.SparseDtype)` instead.
+  if _pandas_api.is_sparse(col):
+start
+
+          Running main.py with the following parameters: 
+          max_input_length: 2000 
+          max_target_length: 600 
+          learning_rate: 5e-05
+          gradient_accumulation_steps: 4
+          batch_size: 3 
+          num_epochs: 20 
+          saves: 10
+          model_checkpoint: emilstabil/mt5-base_V25775_V44105
+          data_source: 2326_Summaries.csv
+          hub_model_id: emilstabil/mt5-base_V25775_V44105_V16386
+          gradient_checkpointing: NO
+    
+4.32.1
+GPU memory occupied: 558 MB.
+tokenized_datasets
+Map:   0%|          | 0/1860 [00:00<?, ? examples/s]Map:  54%|█████▍    | 1000/1860 [00:01<00:01, 563.51 examples/s]Map: 100%|██████████| 1860/1860 [00:03<00:00, 543.66 examples/s]                                                                Map:   0%|          | 0/233 [00:00<?, ? examples/s]Map: 100%|██████████| 233/233 [00:00<00:00, 518.24 examples/s]                                                              Map:   0%|          | 0/233 [00:00<?, ? examples/s]Map: 100%|██████████| 233/233 [00:00<00:00, 530.23 examples/s]                                                              Detected kernel version 3.10.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+model_checkpoint
+cuda_memory
+Seq2SeqTrainingArguments
+data_collator
+empty cache
+start training
+  0%|          | 0/12400 [00:00<?, ?it/s]You're using a T5TokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+  0%|          | 1/12400 [00:10<35:01:26, 10.17s/it]  0%|          | 2/12400 [00:11<16:47:05,  4.87s/it]  0%|          | 3/12400 [00:12<11:06:18,  3.22s/it]  0%|          | 4/12400 [00:13<8:23:05,  2.44s/it]   0%|          | 5/12400 [00:15<7:23:05,  2.14s/it]  0%|          | 6/12400 [00:16<6:17:17,  1.83s/it]  0%|          | 7/12400 [00:18<5:53:24,  1.71s/it]  0%|          | 8/12400 [00:19<5:19:02,  1.54s/it]  0%|          | 9/12400 [00:20<5:04:19,  1.47s/it]  0%|          | 10/12400 [00:21<4:25:28,  1.29s/it]  0%|          | 11/12400 [00:23<4:40:07,  1.36s/it]Traceback (most recent call last):
+  File "/home/easc/mainMT5.py", line 213, in <module>
+    main()
+  File "/home/easc/mainMT5.py", line 206, in main
+    result = trainer.train()
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/transformers/trainer.py", line 1546, in train
+    return inner_training_loop(
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/transformers/trainer.py", line 1837, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/transformers/trainer.py", line 2693, in training_step
+    self.accelerator.backward(loss)
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/accelerate/accelerator.py", line 1989, in backward
+    loss.backward(**kwargs)
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/torch/_tensor.py", line 492, in backward
+    torch.autograd.backward(
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/torch/autograd/__init__.py", line 251, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.68 GiB. GPU 0 has a total capacty of 47.45 GiB of which 10.95 GiB is free. Including non-PyTorch memory, this process has 36.50 GiB memory in use. Of the allocated memory 35.26 GiB is allocated by PyTorch, and 1.04 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+  0%|          | 11/12400 [00:24<7:34:40,  2.20s/it]
+Done

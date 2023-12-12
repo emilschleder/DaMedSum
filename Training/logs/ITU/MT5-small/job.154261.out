@@ -1,0 +1,82 @@
+Running on desktop17:
+Loading anaconda
+Sourcing .bashrc
+stdin: is not a tty
+Activating virtual environment
+Logging in to huggingface
+Token will not been saved to git credential helper. Pass `add_to_git_credential=True` if you want to set the git credential as well.
+Token is valid (permission: write).
+Your token has been saved to /home/easc/.cache/huggingface/token
+Login successful
+Tue Nov 14 11:20:08 2023       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 525.89.02    Driver Version: 525.89.02    CUDA Version: 12.0     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Quadro RTX 8000     Off  | 00000000:3B:00.0 Off |                  Off |
+| 33%   38C    P0    31W / 260W |      0MiB / 49152MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+Running script
+[nltk_data] Downloading package punkt to /home/easc/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/pyarrow/pandas_compat.py:373: FutureWarning: is_sparse is deprecated and will be removed in a future version. Check `isinstance(dtype, pd.SparseDtype)` instead.
+  if _pandas_api.is_sparse(col):
+start
+
+          Running main.py with the following parameters: 
+          max_input_length: 3000 
+          max_target_length: 400 
+          learning_rate: 2e-05
+          gradient_accumulation_steps: 4
+          batch_size: 1 
+          num_epochs: 10 
+          saves: 3
+          model_checkpoint: google/mt5-small
+          data_source: Resumes_without_doubles_Final.csv
+          hub_model_id: emilstabil/mt5-small-finetuned-test_2023-11-14 11:20:15.371382
+          gradient_checkpointing: NO
+    
+4.32.1
+GPU memory occupied: 558 MB.
+Downloading (…)okenizer_config.json:   0%|          | 0.00/82.0 [00:00<?, ?B/s]Downloading (…)okenizer_config.json: 100%|██████████| 82.0/82.0 [00:00<00:00, 11.9kB/s]
+Downloading (…)lve/main/config.json:   0%|          | 0.00/553 [00:00<?, ?B/s]Downloading (…)lve/main/config.json: 100%|██████████| 553/553 [00:00<00:00, 68.1kB/s]
+Downloading (…)ve/main/spiece.model:   0%|          | 0.00/4.31M [00:00<?, ?B/s]Downloading (…)ve/main/spiece.model: 100%|██████████| 4.31M/4.31M [00:00<00:00, 7.67MB/s]Downloading (…)ve/main/spiece.model: 100%|██████████| 4.31M/4.31M [00:00<00:00, 7.61MB/s]
+Downloading (…)cial_tokens_map.json:   0%|          | 0.00/99.0 [00:00<?, ?B/s]Downloading (…)cial_tokens_map.json: 100%|██████████| 99.0/99.0 [00:00<00:00, 45.1kB/s]
+You are using the default legacy behaviour of the <class 'transformers.models.t5.tokenization_t5.T5Tokenizer'>. If you see this, DO NOT PANIC! This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=True`. This should only be set if you understand what it means, and thouroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565
+tokenized_datasets
+Map:   0%|          | 0/800 [00:00<?, ? examples/s]Map: 100%|██████████| 800/800 [00:04<00:00, 186.50 examples/s]                                                              Map:   0%|          | 0/100 [00:00<?, ? examples/s]Map: 100%|██████████| 100/100 [00:00<00:00, 216.43 examples/s]                                                              Map:   0%|          | 0/100 [00:00<?, ? examples/s]Map: 100%|██████████| 100/100 [00:00<00:00, 210.82 examples/s]                                                              model_checkpoint
+Downloading pytorch_model.bin:   0%|          | 0.00/1.20G [00:00<?, ?B/s]Downloading pytorch_model.bin:   1%|          | 10.5M/1.20G [00:00<01:35, 12.5MB/s]Downloading pytorch_model.bin:   2%|▏         | 21.0M/1.20G [00:01<00:52, 22.3MB/s]Downloading pytorch_model.bin:   3%|▎         | 31.5M/1.20G [00:01<00:42, 27.6MB/s]Downloading pytorch_model.bin:   3%|▎         | 41.9M/1.20G [00:01<00:37, 31.0MB/s]Downloading pytorch_model.bin:   4%|▍         | 52.4M/1.20G [00:01<00:31, 36.0MB/s]Downloading pytorch_model.bin:   5%|▌         | 62.9M/1.20G [00:02<00:30, 37.0MB/s]Downloading pytorch_model.bin:   6%|▌         | 73.4M/1.20G [00:02<00:27, 40.4MB/s]Downloading pytorch_model.bin:   7%|▋         | 83.9M/1.20G [00:02<00:28, 39.8MB/s]Downloading pytorch_model.bin:   8%|▊         | 94.4M/1.20G [00:02<00:28, 39.2MB/s]Downloading pytorch_model.bin:   9%|▊         | 105M/1.20G [00:03<00:26, 41.9MB/s] Downloading pytorch_model.bin:  10%|▉         | 115M/1.20G [00:03<00:26, 40.8MB/s]Downloading pytorch_model.bin:  10%|█         | 126M/1.20G [00:03<00:26, 39.9MB/s]Downloading pytorch_model.bin:  11%|█▏        | 136M/1.20G [00:03<00:25, 42.3MB/s]Downloading pytorch_model.bin:  12%|█▏        | 147M/1.20G [00:04<00:25, 41.0MB/s]Downloading pytorch_model.bin:  13%|█▎        | 157M/1.20G [00:04<00:24, 43.2MB/s]Downloading pytorch_model.bin:  14%|█▍        | 168M/1.20G [00:04<00:24, 41.4MB/s]Downloading pytorch_model.bin:  15%|█▍        | 178M/1.20G [00:04<00:25, 40.7MB/s]Downloading pytorch_model.bin:  16%|█▌        | 189M/1.20G [00:05<00:23, 43.2MB/s]Downloading pytorch_model.bin:  17%|█▋        | 199M/1.20G [00:05<00:24, 41.6MB/s]Downloading pytorch_model.bin:  17%|█▋        | 210M/1.20G [00:05<00:24, 40.2MB/s]Downloading pytorch_model.bin:  18%|█▊        | 220M/1.20G [00:05<00:24, 39.9MB/s]Downloading pytorch_model.bin:  19%|█▉        | 231M/1.20G [00:06<00:23, 42.1MB/s]Downloading pytorch_model.bin:  20%|██        | 241M/1.20G [00:06<00:23, 40.9MB/s]Downloading pytorch_model.bin:  21%|██        | 252M/1.20G [00:06<00:23, 40.1MB/s]Downloading pytorch_model.bin:  22%|██▏       | 262M/1.20G [00:06<00:23, 39.5MB/s]Downloading pytorch_model.bin:  23%|██▎       | 273M/1.20G [00:07<00:21, 42.2MB/s]Downloading pytorch_model.bin:  24%|██▎       | 283M/1.20G [00:07<00:22, 41.2MB/s]Downloading pytorch_model.bin:  24%|██▍       | 294M/1.20G [00:07<00:20, 43.4MB/s]Downloading pytorch_model.bin:  25%|██▌       | 304M/1.20G [00:07<00:21, 42.0MB/s]Downloading pytorch_model.bin:  26%|██▌       | 315M/1.20G [00:08<00:21, 40.8MB/s]Downloading pytorch_model.bin:  27%|██▋       | 325M/1.20G [00:08<00:22, 39.8MB/s]Downloading pytorch_model.bin:  28%|██▊       | 336M/1.20G [00:08<00:20, 42.1MB/s]Downloading pytorch_model.bin:  29%|██▉       | 346M/1.20G [00:08<00:20, 40.8MB/s]Downloading pytorch_model.bin:  30%|██▉       | 357M/1.20G [00:09<00:21, 40.2MB/s]Downloading pytorch_model.bin:  31%|███       | 367M/1.20G [00:09<00:19, 42.8MB/s]Downloading pytorch_model.bin:  31%|███▏      | 377M/1.20G [00:09<00:19, 41.4MB/s]Downloading pytorch_model.bin:  32%|███▏      | 388M/1.20G [00:09<00:20, 40.5MB/s]Downloading pytorch_model.bin:  33%|███▎      | 398M/1.20G [00:10<00:18, 42.7MB/s]Downloading pytorch_model.bin:  34%|███▍      | 409M/1.20G [00:10<00:19, 41.5MB/s]Downloading pytorch_model.bin:  35%|███▍      | 419M/1.20G [00:10<00:19, 40.7MB/s]Downloading pytorch_model.bin:  36%|███▌      | 430M/1.20G [00:10<00:17, 43.0MB/s]Downloading pytorch_model.bin:  37%|███▋      | 440M/1.20G [00:11<00:18, 41.6MB/s]Downloading pytorch_model.bin:  38%|███▊      | 451M/1.20G [00:11<00:17, 43.8MB/s]Downloading pytorch_model.bin:  38%|███▊      | 461M/1.20G [00:11<00:17, 42.3MB/s]Downloading pytorch_model.bin:  39%|███▉      | 472M/1.20G [00:11<00:17, 41.0MB/s]Downloading pytorch_model.bin:  40%|████      | 482M/1.20G [00:12<00:16, 43.4MB/s]Downloading pytorch_model.bin:  41%|████      | 493M/1.20G [00:12<00:16, 41.9MB/s]Downloading pytorch_model.bin:  42%|████▏     | 503M/1.20G [00:12<00:16, 41.1MB/s]Downloading pytorch_model.bin:  43%|████▎     | 514M/1.20G [00:12<00:15, 43.3MB/s]Downloading pytorch_model.bin:  44%|████▎     | 524M/1.20G [00:13<00:16, 41.9MB/s]Downloading pytorch_model.bin:  45%|████▍     | 535M/1.20G [00:13<00:16, 40.7MB/s]Downloading pytorch_model.bin:  45%|████▌     | 545M/1.20G [00:13<00:15, 42.8MB/s]Downloading pytorch_model.bin:  46%|████▋     | 556M/1.20G [00:13<00:15, 41.4MB/s]Downloading pytorch_model.bin:  47%|████▋     | 566M/1.20G [00:14<00:15, 40.8MB/s]Downloading pytorch_model.bin:  48%|████▊     | 577M/1.20G [00:14<00:14, 43.3MB/s]Downloading pytorch_model.bin:  49%|████▉     | 587M/1.20G [00:14<00:14, 41.6MB/s]Downloading pytorch_model.bin:  50%|████▉     | 598M/1.20G [00:14<00:14, 40.7MB/s]Downloading pytorch_model.bin:  51%|█████     | 608M/1.20G [00:15<00:13, 43.2MB/s]Downloading pytorch_model.bin:  52%|█████▏    | 619M/1.20G [00:15<00:13, 41.8MB/s]Downloading pytorch_model.bin:  52%|█████▏    | 629M/1.20G [00:15<00:14, 40.8MB/s]Downloading pytorch_model.bin:  53%|█████▎    | 640M/1.20G [00:15<00:12, 43.4MB/s]Downloading pytorch_model.bin:  54%|█████▍    | 650M/1.20G [00:16<00:13, 41.9MB/s]Downloading pytorch_model.bin:  55%|█████▌    | 661M/1.20G [00:16<00:12, 44.2MB/s]Downloading pytorch_model.bin:  56%|█████▌    | 671M/1.20G [00:16<00:12, 42.6MB/s]Downloading pytorch_model.bin:  57%|█████▋    | 682M/1.20G [00:16<00:12, 41.4MB/s]Downloading pytorch_model.bin:  58%|█████▊    | 692M/1.20G [00:17<00:11, 43.4MB/s]Downloading pytorch_model.bin:  59%|█████▊    | 703M/1.20G [00:17<00:11, 42.1MB/s]Downloading pytorch_model.bin:  59%|█████▉    | 713M/1.20G [00:17<00:11, 41.0MB/s]Downloading pytorch_model.bin:  60%|██████    | 724M/1.20G [00:17<00:11, 43.2MB/s]Downloading pytorch_model.bin:  61%|██████    | 734M/1.20G [00:18<00:11, 42.0MB/s]Downloading pytorch_model.bin:  62%|██████▏   | 744M/1.20G [00:18<00:10, 44.2MB/s]Downloading pytorch_model.bin:  63%|██████▎   | 755M/1.20G [00:18<00:10, 42.4MB/s]Downloading pytorch_model.bin:  64%|██████▎   | 765M/1.20G [00:18<00:10, 41.3MB/s]Downloading pytorch_model.bin:  65%|██████▍   | 776M/1.20G [00:19<00:09, 43.5MB/s]Downloading pytorch_model.bin:  65%|██████▌   | 786M/1.20G [00:19<00:09, 42.1MB/s]Downloading pytorch_model.bin:  66%|██████▋   | 797M/1.20G [00:19<00:09, 41.1MB/s]Downloading pytorch_model.bin:  67%|██████▋   | 807M/1.20G [00:19<00:09, 43.4MB/s]Downloading pytorch_model.bin:  68%|██████▊   | 818M/1.20G [00:20<00:09, 42.1MB/s]Downloading pytorch_model.bin:  69%|██████▉   | 828M/1.20G [00:20<00:08, 44.0MB/s]Downloading pytorch_model.bin:  70%|██████▉   | 839M/1.20G [00:20<00:08, 42.5MB/s]Downloading pytorch_model.bin:  71%|███████   | 849M/1.20G [00:20<00:08, 41.3MB/s]Downloading pytorch_model.bin:  72%|███████▏  | 860M/1.20G [00:21<00:07, 43.3MB/s]Downloading pytorch_model.bin:  72%|███████▏  | 870M/1.20G [00:21<00:07, 42.2MB/s]Downloading pytorch_model.bin:  73%|███████▎  | 881M/1.20G [00:21<00:07, 44.0MB/s]Downloading pytorch_model.bin:  74%|███████▍  | 891M/1.20G [00:21<00:07, 42.4MB/s]Downloading pytorch_model.bin:  75%|███████▌  | 902M/1.20G [00:22<00:07, 41.5MB/s]Downloading pytorch_model.bin:  76%|███████▌  | 912M/1.20G [00:22<00:06, 43.6MB/s]Downloading pytorch_model.bin:  77%|███████▋  | 923M/1.20G [00:22<00:06, 42.0MB/s]Downloading pytorch_model.bin:  78%|███████▊  | 933M/1.20G [00:22<00:06, 40.9MB/s]Downloading pytorch_model.bin:  79%|███████▊  | 944M/1.20G [00:23<00:05, 43.2MB/s]Downloading pytorch_model.bin:  79%|███████▉  | 954M/1.20G [00:23<00:05, 41.8MB/s]Downloading pytorch_model.bin:  80%|████████  | 965M/1.20G [00:23<00:05, 43.8MB/s]Downloading pytorch_model.bin:  81%|████████  | 975M/1.20G [00:23<00:05, 42.4MB/s]Downloading pytorch_model.bin:  82%|████████▏ | 986M/1.20G [00:24<00:05, 40.9MB/s]Downloading pytorch_model.bin:  83%|████████▎ | 996M/1.20G [00:24<00:05, 40.0MB/s]Downloading pytorch_model.bin:  84%|████████▍ | 1.01G/1.20G [00:24<00:04, 42.6MB/s]Downloading pytorch_model.bin:  85%|████████▍ | 1.02G/1.20G [00:24<00:04, 41.2MB/s]Downloading pytorch_model.bin:  86%|████████▌ | 1.03G/1.20G [00:25<00:04, 40.5MB/s]Downloading pytorch_model.bin:  86%|████████▋ | 1.04G/1.20G [00:25<00:03, 43.0MB/s]Downloading pytorch_model.bin:  87%|████████▋ | 1.05G/1.20G [00:25<00:03, 41.2MB/s]Downloading pytorch_model.bin:  88%|████████▊ | 1.06G/1.20G [00:25<00:03, 40.5MB/s]Downloading pytorch_model.bin:  89%|████████▉ | 1.07G/1.20G [00:26<00:03, 40.0MB/s]Downloading pytorch_model.bin:  90%|████████▉ | 1.08G/1.20G [00:26<00:02, 42.6MB/s]Downloading pytorch_model.bin:  91%|█████████ | 1.09G/1.20G [00:26<00:02, 41.3MB/s]Downloading pytorch_model.bin:  92%|█████████▏| 1.10G/1.20G [00:26<00:02, 43.8MB/s]Downloading pytorch_model.bin:  93%|█████████▎| 1.11G/1.20G [00:27<00:02, 42.1MB/s]Downloading pytorch_model.bin:  93%|█████████▎| 1.12G/1.20G [00:27<00:01, 41.1MB/s]Downloading pytorch_model.bin:  94%|█████████▍| 1.13G/1.20G [00:27<00:01, 40.1MB/s]Downloading pytorch_model.bin:  95%|█████████▌| 1.14G/1.20G [00:27<00:01, 42.5MB/s]Downloading pytorch_model.bin:  96%|█████████▌| 1.15G/1.20G [00:28<00:01, 41.3MB/s]Downloading pytorch_model.bin:  97%|█████████▋| 1.16G/1.20G [00:28<00:00, 40.3MB/s]Downloading pytorch_model.bin:  98%|█████████▊| 1.17G/1.20G [00:28<00:00, 43.0MB/s]Downloading pytorch_model.bin:  99%|█████████▊| 1.18G/1.20G [00:28<00:00, 41.5MB/s]Downloading pytorch_model.bin: 100%|█████████▉| 1.20G/1.20G [00:29<00:00, 40.5MB/s]Downloading pytorch_model.bin: 100%|██████████| 1.20G/1.20G [00:29<00:00, 42.1MB/s]Downloading pytorch_model.bin: 100%|██████████| 1.20G/1.20G [00:29<00:00, 41.1MB/s]
+Downloading (…)neration_config.json:   0%|          | 0.00/147 [00:00<?, ?B/s]Downloading (…)neration_config.json: 100%|██████████| 147/147 [00:00<00:00, 23.2kB/s]
+Detected kernel version 3.10.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+cuda_memory
+Seq2SeqTrainingArguments
+data_collator
+Traceback (most recent call last):
+  File "/home/easc/mainMT5.py", line 216, in <module>
+    main()
+  File "/home/easc/mainMT5.py", line 191, in main
+    trainer = Seq2SeqTrainer(
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/transformers/trainer_seq2seq.py", line 56, in __init__
+    super().__init__(
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/transformers/trainer.py", line 557, in __init__
+    self.init_hf_repo()
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/transformers/trainer.py", line 3435, in init_hf_repo
+    repo_url = create_repo(repo_name, token=self.args.hub_token, private=self.args.hub_private_repo, exist_ok=True)
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/huggingface_hub/utils/_validators.py", line 110, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/home/easc/.conda/envs/env_easc/lib/python3.9/site-packages/huggingface_hub/utils/_validators.py", line 164, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.utils._validators.HFValidationError: Repo id must use alphanumeric chars or '-', '_', '.', '--' and '..' are forbidden, '-' and '.' cannot start or end the name, max length is 96: 'emilstabil/mt5-small-finetuned-test_2023-11-14 11:20:15.371382'.
+Done
