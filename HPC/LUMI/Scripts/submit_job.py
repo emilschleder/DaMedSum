@@ -10,12 +10,12 @@ ssh_client.connect()
 
 # Uploading job file
 remote_job_file = 'job.sh'
-local_job_file = f'{get_config()["projectpath"]}HPC/LUMI/jobs/{remote_job_file}'
+local_job_file = f'{config["projectpath"]}HPC/LUMI/jobs/{remote_job_file}'
 ssh_client.upload_file(local_job_file, remote_job_file)
 
 # Uploading model file
 remote_model_file = 'mainDANSUM_lumi.py'
-local_model_file = f'{get_config()["projectpath"]}model/{remote_model_file}'
+local_model_file = f'{config["projectpath"]}model/{remote_model_file}'
 ssh_client.upload_file(local_model_file, remote_model_file)
 
 # Submitting job and waiting for completion
