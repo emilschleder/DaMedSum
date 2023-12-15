@@ -19,7 +19,27 @@ The final model is available in 4 variations on Huggingface:
 * DaMedSum-small: https://huggingface.co/emilstabil/DaMedSum-small 
 * DaMedSum-base: https://huggingface.co/emilstabil/DaMedSum-base 
 * DaMedSum-large: https://huggingface.co/emilstabil/DaMedSum-large 
-* DaMedSumT5-large: https://huggingface.co/emilstabil/DaMedSumT5-large 
+* DaMedSumT5-large: https://huggingface.co/emilstabil/DaMedSumT5-large
+
+## Getting started
+All of the models can be used locally using the following approach:
+```python
+# Use a pipeline as a high-level helper
+from transformers import pipeline
+
+# Initiating summarization pipeline
+pipe = pipeline("summarization", model="emilstabil/DaMedSumT5-large")
+
+# Defining text to summarize
+text = "text to summarize"
+
+# Example function of how to produce a summary with a few parameters
+def generate_summary(pipe, text):
+    return pipe(text, max_length=548, min_length=40, length_penalty=2.0, num_beams=4, early_stopping=True)[0]['summary_text']
+
+# Show summary
+print(generate_summary(pipe, text))
+```
 
 ## Authors
 Nicolaj Larsen (@nicla)    
